@@ -1,0 +1,15 @@
+{
+  "name": "local-and-zoneless-cd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@angular/cli": "^20.0.0-next.5"
+  }
+}
