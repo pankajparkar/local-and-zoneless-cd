@@ -1,5 +1,5 @@
 // child2.component.ts
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-child2',
@@ -10,6 +10,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
       <p>Message: {{ message }}</p>
     </div>
   `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Child2Component implements OnChanges {
     cdCount = 0;

@@ -1,5 +1,5 @@
 // child1.component.ts
-import { ChangeDetectorRef, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-child1',
@@ -10,6 +10,7 @@ import { ChangeDetectorRef, Component, inject, Input, OnChanges, SimpleChanges }
       <p>Data Value: {{ data.value }}</p>
     </div>
   `,
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Child1Component implements OnChanges {
     cdCount = 0;
@@ -22,12 +23,6 @@ export class Child1Component implements OnChanges {
         } else {
             console.log('Child 1 - Change detection triggered (but no "data" change)');
         }
-    }
-
-    ngOnInit() {
-        setInterval(() => {
-            this.cd.detectChanges();
-        }, 5000)
     }
 
     ngAfterViewChecked() {
