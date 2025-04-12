@@ -19,6 +19,7 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
     </button>
   `,
   // changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: `:host{display:block;border: 1px solid blue; padding: 10px;}`,
 })
 export class WhenComponent {
   count = 0;

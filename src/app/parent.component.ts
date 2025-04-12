@@ -14,6 +14,7 @@ import { Child2Component } from "./child2.component";
     `,
     imports: [Child1Component, Child2Component,],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: `:host{display:block;border: 1px solid blue; padding: 10px;}`,
 })
 export class ParentComponent {
     parentCount = 0;
