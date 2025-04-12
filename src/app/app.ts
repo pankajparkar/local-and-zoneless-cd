@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'lz-root',
   template: `
-      <h3>CD Counts: {{ count }}</h3>
+      <h3>App Component CD Counts: {{ count }}</h3>
       <br>
     <!-- <app-parent /> -->
     <router-outlet></router-outlet>

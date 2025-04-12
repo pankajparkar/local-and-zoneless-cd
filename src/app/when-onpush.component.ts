@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@
   standalone: true,
   imports: [JsonPipe],
   template: `
-    <h3>CD Counts: {{ count }}</h3>
+    <h3>Child Component Component CD Counts: {{ count }}</h3>
     Task - {{value}}
     <hr>
     Response - {{ response | json }}
@@ -18,9 +18,14 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@
       Start Event
     </button>
   `,
+  styles: `:host {
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #000;
+  }`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WhatComponent {
+export class WhenOnPushComponent {
   count = 0;
   value = 'No value';
   response: any;
@@ -30,7 +35,9 @@ export class WhatComponent {
   networkCall() {
     this.http
       .get('https://jsonplaceholder.typicode.com/todos/1')
-      .subscribe((response: any) => (this.response = response));
+      .subscribe((response: any) => {
+        this.response = response;
+      });
   }
 
   task() {

@@ -9,7 +9,7 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
   standalone: true,
   imports: [JsonPipe],
   template: `
-    <h3>CD Counts: {{ count }}</h3>
+    <h3>Child Component Component CD Counts: {{ count }}</h3>
     Task - {{value}}
     <hr>
     Response - {{ response | json }}
@@ -46,12 +46,5 @@ export class WhenComponent {
 
   ngDoCheck() {
     this.count++;
-  }
-
-  ngOnInit() {
-    // setTimeout(() => {
-    //   this.cd.detectChanges();
-    //   this.startEvent();
-    // }, 15000);
   }
 }
