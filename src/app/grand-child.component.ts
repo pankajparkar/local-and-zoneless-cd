@@ -5,16 +5,16 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
   selector: 'app-grand-child',
   template: `
     <div style="border: 1px solid blue; padding: 10px;">
-      <p>{{ test }}</p>
+      <h3>CD Counts: {{ count }}</h3>
+      <p>Grand child</p>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GrandChildComponent {
-  cdCount = 0;
+  count = 0;
 
-  get test() {
-    console.log('Update Grand Child 1');
-    return 1;
+  ngDoCheck() {
+    this.count++;
   }
 }

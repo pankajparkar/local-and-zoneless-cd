@@ -2,25 +2,24 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Child1Component } from "./child1.component";
 import { Child2Component } from "./child2.component";
-import { JsonPipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map, tap, timer } from 'rxjs';
+import { map, timer } from 'rxjs';
 
 @Component({
     selector: 'app-parent',
     template: `
     <h2>Parent Component - Count: {{ parentCount }}</h2>
+    <h3>CD Counts: {{ count }}</h3>
     <button (click)="incrementParent()">Increment Parent</button>
-    {{ test }}
     <app-child1 [data]="$any(child1Data())"></app-child1>
     <app-child2 [message]="$any(child2Message())"></app-child2>
   `,
-    imports: [Child1Component, Child2Component, JsonPipe,],
+    imports: [Child1Component, Child2Component,],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ParentComponent {
-    cdCount = 0;
     parentCount = 0;
+    count = 0;
     // child1Data = { value: 10 };
     // child2Message = 'Hello from Parent';
 
@@ -39,9 +38,8 @@ export class ParentComponent {
         // console.log('Parent Count Incremented');
     }
 
-    get test() {
-        console.log('Update Parent');
-        return 1;
+    ngDoCheck() {
+        this.count++;
     }
 
 }

@@ -5,7 +5,8 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'lz-root',
   template: `
-    <br>
+      <h3>CD Counts: {{ count }}</h3>
+      <br>
     <!-- <app-parent /> -->
     <router-outlet></router-outlet>
   `,
@@ -13,13 +14,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   title = 'local-and-zoneless-cd';
-  cdCount = 0;
+  count = 0;
 
-  constructor(appRef: ApplicationRef) {
-    const originalTick = appRef.tick;
-    appRef.tick = () => {
-      originalTick.apply(appRef);
-      console.log(`App Level CD - ${++this.cdCount}`);
-    };
+  ngDoCheck() {
+    ++this.count;
   }
 }

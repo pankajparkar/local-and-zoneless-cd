@@ -1,7 +1,7 @@
 // child1.component.ts
 import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 
 
 @Component({
@@ -18,9 +18,9 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
       Start Event
     </button>
   `,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WhenComponent {
+export class WhatComponent {
   count = 0;
   value = 'No value';
   response: any;
