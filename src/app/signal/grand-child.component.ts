@@ -15,15 +15,22 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 })
 export class SignalGrandChildComponent {
   count = 0;
-  // newSignal = signal(0);
 
-  ngDoCheck() {
+
+  ngAfterViewChecked() {
     this.count++;
   }
 
+  // newSignal = signal(0);
+  // _lastValue = 0;
+
   // ngOnInit() {
-  //   setTimeout(() => {
-  //     this.newSignal.set(1);
-  //   }, 5000);
+  //   setInterval(() => {
+  //     ++this._lastValue;
+  //     if (this._lastValue % 3 === 0) {
+  //       return;
+  //     }
+  //     this.newSignal.set(this._lastValue);
+  //   }, 1000);
   // }
 }
