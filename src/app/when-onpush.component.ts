@@ -43,6 +43,7 @@ export class WhenOnPushComponent {
   task() {
     setTimeout(() => {
       this.value = 'Test';
+      this.cd.markForCheck();
     }, 2000);
   }
 
