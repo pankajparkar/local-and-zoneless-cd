@@ -46,7 +46,6 @@ export class WhenOnPushComponent {
   task() {
     setTimeout(() => {
       this.value = 'Test';
-      this.cd.detectChanges();
     }, 2000);
   }
 
@@ -55,7 +54,7 @@ export class WhenOnPushComponent {
     this.task();
   }
 
-  ngDoCheck() {
+  ngAfterViewChecked() {
     this.count++;
   }
 

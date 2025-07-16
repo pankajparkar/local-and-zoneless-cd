@@ -12,7 +12,6 @@ import { Navbar } from './navbar';
     <router-outlet></router-outlet>
   `,
   imports: [Navbar, RouterOutlet],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   title = 'local-and-zoneless-cd';

@@ -14,11 +14,15 @@ export const routes: Routes = [
         loadComponent: () => import('./when-onpush.component').then(m => m.WhenOnPushComponent)
     },
     {
-        path: 'signal/normal-cd',
+        path: 'non-signal/onpush',
         loadComponent: () => import('./non-signal/parent.component').then(m => m.ParentComponent)
     },
     {
-        path: 'local-cd',
+        path: 'signal/onpush',
+        loadComponent: () => import('./non-signal/parent.component').then(m => m.ParentComponent)
+    },
+    {
+        path: 'signal/local-cd',
         loadComponent: () => import('./signal/parent.component').then(m => m.SignalParentComponent)
     },
     {

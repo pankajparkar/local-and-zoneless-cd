@@ -21,7 +21,6 @@ const styles = `
       Start Event
     </button>
   `,
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   styles,
 })
 export class WhenDefaultComponent {

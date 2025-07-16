@@ -1,5 +1,5 @@
 // child1.component.ts
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { afterEveryRender, ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'lz-signal-grand-child',
@@ -16,21 +16,20 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
 export class SignalGrandChildComponent {
   count = 0;
 
-
-  ngAfterViewChecked() {
+  _ = afterEveryRender(() => {
     this.count++;
-  }
+  });
 
   newSignal = signal(0);
-  _lastValue = 0;
 
   ngOnInit() {
+    let lastValue = 0;
     setInterval(() => {
-      ++this._lastValue;
-      if (this._lastValue % 3 !== 0) {
+      ++lastValue;
+      if (lastValue % 3 !== 0) {
         return;
       }
-      this.newSignal.set(this._lastValue);
+      this.newSignal.set(lastValue);
     }, 1000);
   }
 }

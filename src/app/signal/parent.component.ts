@@ -5,6 +5,8 @@ import { SignalChild2Component } from "./child2.component";
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map, timer } from 'rxjs';
 
+const styles = `:host{display:block;border: 1px solid blue; padding: 10px;}`;
+
 @Component({
     selector: 'lz-signal-parent',
     template: `
@@ -17,7 +19,7 @@ import { map, timer } from 'rxjs';
   `,
     imports: [SignalChild1Component, SignalChild2Component],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    styles: `:host{display:block;border: 1px solid blue; padding: 10px;}`,
+    styles,
 })
 export class SignalParentComponent {
     parentCount = 0;
