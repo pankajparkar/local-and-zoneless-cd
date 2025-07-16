@@ -19,7 +19,7 @@ export const routes: Routes = [
     },
     {
         path: 'signal/onpush',
-        loadComponent: () => import('./non-signal/parent.component').then(m => m.ParentComponent)
+        loadComponent: () => import('./signal/parent.component').then(m => m.SignalParentComponent)
     },
     {
         path: 'signal/local-cd',
