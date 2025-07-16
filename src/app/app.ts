@@ -1,13 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar';
 import { CdCounterDirective } from './cd-counter.directive';
 
 @Component({
   selector: 'lz-root',
-  hostDirectives: [
-    CdCounterDirective,
-  ],
+  // hostDirectives: [CdCounterDirective],
   template: `
     <lz-navbar></lz-navbar>
     <br>
@@ -17,10 +15,4 @@ import { CdCounterDirective } from './cd-counter.directive';
   imports: [Navbar, RouterOutlet],
 })
 export class App {
-  title = 'local-and-zoneless-cd';
-  count = 0;
-
-  ngDoCheck() {
-    ++this.count;
-  }
 }

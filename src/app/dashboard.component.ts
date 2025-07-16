@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
         <a routerLink="/when-onpush">ChangeDetectionStrategy - OnPush</a>
       </li>
       <li>
-        <a routerLink="/non-signal/">Non Signal - OnPush</a>
+        <a routerLink="/non-signal/onpush">Non Signal - OnPush</a>
       </li>
       <li>
         <a routerLink="/signal-default">Signal OnPush</a>

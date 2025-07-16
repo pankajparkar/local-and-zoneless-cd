@@ -72,5 +72,4 @@ const styles = `
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Navbar {
-
 }
