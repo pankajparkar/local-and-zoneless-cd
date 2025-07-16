@@ -1,16 +1,18 @@
-import { ApplicationRef, Component } from '@angular/core';
-import { ParentComponent } from "./parent.component";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Navbar } from './navbar';
 
 @Component({
   selector: 'lz-root',
   template: `
-      <h3>App Component CD Counts: {{ count }}</h3>
-      <br>
-    <!-- <app-parent /> -->
+    <lz-navbar></lz-navbar>
+    <h3>App Component CD Counts: {{ count }}</h3>
+    <br>
+
     <router-outlet></router-outlet>
   `,
-  imports: [ParentComponent, RouterOutlet],
+  imports: [Navbar, RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   title = 'local-and-zoneless-cd';

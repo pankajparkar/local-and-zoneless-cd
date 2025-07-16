@@ -3,9 +3,12 @@ import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
+const styles = `
+  :host{display:block;border: 1px solid blue; padding: 10px;}
+`;
 
 @Component({
-  selector: 'app-what',
+  selector: 'lz-when-default',
   standalone: true,
   imports: [JsonPipe],
   template: `
@@ -19,9 +22,9 @@ import { ChangeDetectorRef, Component, inject } from '@angular/core';
     </button>
   `,
   // changeDetection: ChangeDetectionStrategy.OnPush,
-  styles: `:host{display:block;border: 1px solid blue; padding: 10px;}`,
+  styles,
 })
-export class WhenComponent {
+export class WhenDefaultComponent {
   count = 0;
   value = 'No value';
   response: any;

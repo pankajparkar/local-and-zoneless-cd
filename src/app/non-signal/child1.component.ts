@@ -2,7 +2,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, input } from '@angular/core';
 
 @Component({
-  selector: 'app-child1',
+  selector: 'lz-child1',
   template: `
     <div style="border: 1px solid blue; padding: 10px;">
       <h3>Child Component 1</h3>
@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, i
 })
 export class Child1Component {
   count = 0;
-  @Input() data!: { value: number };
+  @Input() data: { value: number } | undefined;
 
   ngDoCheck() {
     this.count++;

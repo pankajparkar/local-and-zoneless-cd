@@ -2,7 +2,7 @@
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-signal-grand-child',
+  selector: 'lz-signal-grand-child',
   template: `
     <div style="border: 1px solid blue; padding: 10px;">
       <h3>CD Counts: {{ count }}</h3>

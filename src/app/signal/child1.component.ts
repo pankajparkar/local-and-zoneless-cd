@@ -2,7 +2,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, input } from '@angular/core';
 
 @Component({
-  selector: 'app-signal-child1',
+  selector: 'lz-signal-child1',
   template: `
     <div style="border: 1px solid blue; padding: 10px;">
       <h3>Child Component 1</h3>

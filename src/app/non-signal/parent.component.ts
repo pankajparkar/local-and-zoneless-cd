@@ -4,13 +4,13 @@ import { Child1Component } from "./child1.component";
 import { Child2Component } from "./child2.component";
 
 @Component({
-    selector: 'app-parent',
+    selector: 'lz-parent',
     template: `
     <h2>Parent Component - Count: {{ parentCount }}</h2>
     <h3>CD Counts: {{ count }}</h3>
     <button (click)="incrementParent()">Increment Parent</button>
-    <app-child1 [data]="$any(child1Data)"></app-child1>
-    <app-child2 [message]="$any(child2Message)"></app-child2>
+    <lz-child1 [data]="$any(child1Data)"></lz-child1>
+    <lz-child2 [message]="$any(child2Message)"></lz-child2>
     `,
     imports: [Child1Component, Child2Component,],
     changeDetection: ChangeDetectionStrategy.OnPush,

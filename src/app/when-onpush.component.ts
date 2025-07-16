@@ -4,8 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 
 
+const styles = `
+  :host {
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #000;
+  }`;
+
 @Component({
-  selector: 'app-what',
+  selector: 'lz-what',
   standalone: true,
   imports: [JsonPipe],
   template: `
@@ -18,11 +25,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@
       Start Event
     </button>
   `,
-  styles: `:host {
-    display: block;
-    padding: 5px 10px;
-    border: 1px solid #000;
-  }`,
+  styles,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WhenOnPushComponent {
@@ -43,7 +46,7 @@ export class WhenOnPushComponent {
   task() {
     setTimeout(() => {
       this.value = 'Test';
-      this.cd.markForCheck();
+      this.cd.detectChanges();
     }, 2000);
   }
 

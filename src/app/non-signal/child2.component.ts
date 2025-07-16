@@ -3,13 +3,13 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, Input, i
 import { GrandChildComponent } from "./grand-child.component";
 
 @Component({
-  selector: 'app-child2',
+  selector: 'lz-child2',
   template: `
     <div style="border: 1px solid green; padding: 10px;">
       <h3>Child Component 2</h3>
       <h3>CD Counts: {{ count }}</h3>
       <p>Message: {{ message }}</p>
-      <app-grand-child />
+      <lz-grand-child />
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -6,14 +6,14 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map, timer } from 'rxjs';
 
 @Component({
-    selector: 'app-signal-parent',
+    selector: 'lz-signal-parent',
     template: `
     <h2>Parent Component - Count: {{ parentCount }}</h2>
     <h3>CD Counts: {{ count }}</h3>
     <button (click)="incrementParent()">Increment Parent</button>
 
-    <app-signal-child1 [data]="$any(child1Data())" />
-    <app-signal-child2 [message]="$any(child2Message())" />
+    <lz-signal-child1 [data]="$any(child1Data())" />
+    <lz-signal-child2 [message]="$any(child2Message())" />
   `,
     imports: [SignalChild1Component, SignalChild2Component],
     changeDetection: ChangeDetectionStrategy.OnPush,
