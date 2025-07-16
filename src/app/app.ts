@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar';
+import { CdCounterDirective } from './cd-counter.directive';
 
 @Component({
   selector: 'lz-root',
+  hostDirectives: [
+    CdCounterDirective,
+  ],
   template: `
     <lz-navbar></lz-navbar>
-    <h3>App Component CD Counts: {{ count }}</h3>
     <br>
 
     <router-outlet></router-outlet>

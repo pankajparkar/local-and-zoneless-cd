@@ -2,6 +2,7 @@
 import { JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { CdCounterDirective } from './cd-counter.directive';
 
 const styles = `
   :host{display:block;border: 1px solid blue; padding: 10px;}
@@ -11,11 +12,11 @@ const styles = `
   selector: 'lz-when-default',
   standalone: true,
   imports: [JsonPipe],
+  hostDirectives: [CdCounterDirective],
   template: `
-    <h3>Child Component Component CD Counts: {{ count }}</h3>
     Task - {{value}}
     <hr>
-    Response - {{ response | json }}
+    Response - {{ response }}
     <hr>
     <button (click)="startEvent()">
       Start Event
@@ -24,7 +25,6 @@ const styles = `
   styles,
 })
 export class WhenDefaultComponent {
-  count = 0;
   value = 'No value';
   response: any;
   cd = inject(ChangeDetectorRef);
@@ -45,9 +45,5 @@ export class WhenDefaultComponent {
   startEvent() {
     this.networkCall();
     this.task();
-  }
-
-  ngDoCheck() {
-    this.count++;
   }
 }
