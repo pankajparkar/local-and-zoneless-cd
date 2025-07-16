@@ -11,8 +11,10 @@ export class CdCounterDirective {
 
     createDomElement() {
         const cdCounterElement = this.renderer.createElement('div');
+        const span = this.renderer.createElement('span');
         this.renderer.addClass(cdCounterElement, 'cd-counter');
-        this.renderer.setProperty(cdCounterElement, 'textContent', `${this.el.nativeElement.tagName.toLowerCase()} CD Counts: ${this.count}`);
+        this.renderer.insertBefore(cdCounterElement, span, null);
+        this.renderer.setProperty(span, 'textContent', `${this.el.nativeElement.tagName.toLowerCase()} CD Counts: ${this.count}`);
         return cdCounterElement;
     }
 

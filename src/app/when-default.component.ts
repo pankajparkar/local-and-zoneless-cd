@@ -16,7 +16,7 @@ const styles = `
   template: `
     Task - {{value}}
     <hr>
-    Response - {{ response }}
+    Response - {{ response | json }}
     <hr>
     <button (click)="startEvent()">
       Start Event
