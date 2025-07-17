@@ -19,9 +19,6 @@ import { RouterLink } from '@angular/router';
         <a routerLink="/non-signal/onpush">Non Signal - OnPush</a>
       </li>
       <li>
-        <a routerLink="/signal/parent">Signal OnPush</a>
-      </li>
-      <li>
         <a routerLink="/signal/onpush">Local CD (Signal) - OnPush</a>
       </li>
     </ul>
