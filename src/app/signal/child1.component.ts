@@ -1,5 +1,5 @@
 // child1.component.ts
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CdCounterDirective } from '../cd-counter.directive';
 
 @Component({

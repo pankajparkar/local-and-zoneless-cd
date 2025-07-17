@@ -15,6 +15,7 @@ import { CdCounterDirective } from '../cd-counter.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GrandChildComponent {
+  newValue = 0;
   ngOnInit() {
     let lastValue = 0;
     setInterval(() => {
@@ -22,6 +23,7 @@ export class GrandChildComponent {
       if (lastValue % 3 !== 0) {
         return;
       }
+      this.newValue = lastValue;
     }, 1000);
   }
 }
